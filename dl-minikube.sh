@@ -1,3 +1,3 @@
 !#/bin/bash
-curl -o minikube https://github.com/kubernetes/minikube/releases/download/v1.22.0/minikube-linux-amd64
+curl -o minikube https://objects.githubusercontent.com/github-production-release-asset-2e65be/56353740/dd0ee880-df33-11eb-90d0-39b82bf30b0f?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20211204%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20211204T173510Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=6f03d23e59aba683795356ff54fc36e009ef078f2bc7f636b1d44cc765914416&amp;X-Amz-SignedHeaders=host&amp;actor_id=0&amp;key_id=0&amp;repo_id=56353740&amp;response-content-disposition=attachment%3B%20filename%3Dminikube-linux-amd64&amp;response-content-type=application%2Foctet-stream
 curl -o kubectl https://storage.googleapis.com/kubernetes-release/release/v1.22.0/bin/linux/amd64/kubectl

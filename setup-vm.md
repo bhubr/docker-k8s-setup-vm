@@ -10,6 +10,12 @@ En tant que `root` :
 apt-get update
 ```
 
+### Install de Git (pour recuperer cette doc)
+
+```
+apt-get install -y git
+```
+
 ### Installation de Docker
 
 Doc d'[installation sur Debian](https://docs.docker.com/engine/install/debian/)

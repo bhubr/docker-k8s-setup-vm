@@ -10,6 +10,12 @@ En tant que `root` :
 apt-get update
 ```
 
+### Install de sudo
+
+```
+apt-get install -y sudo
+```
+
 ### Install de Git (pour recuperer cette doc)
 
 ```

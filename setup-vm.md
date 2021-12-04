@@ -10,16 +10,10 @@ En tant que `root` :
 apt-get update
 ```
 
-### Install de sudo
+### Install de sudo, vim, git
 
 ```
-apt-get install -y sudo
-```
-
-### Install de Git (pour recuperer cette doc)
-
-```
-apt-get install -y git
+apt-get install -y sudo vim git
 ```
 
 ### Installation de Docker

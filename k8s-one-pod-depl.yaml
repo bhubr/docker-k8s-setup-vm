@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-hello
+spec:
+  selector:
+    matchLabels:
+      run: node-hello
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: node-hello
+    spec:
+      containers:
+      - name: node-hello
+        image: ghcr.io/bhubr/node-hello-world:0.0.1
+        ports:
+        - containerPort: 3000

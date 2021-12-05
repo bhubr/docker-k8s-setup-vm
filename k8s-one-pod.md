@@ -29,7 +29,7 @@ spec:
   - name: node-hello
     image: ghcr.io/bhubr/node-hello-world:0.0.1
     ports:
-    - containerPort: 80
+    - containerPort: 3000
 ```
 
 Start it: `kubectl apply -f k8s-one-pod.yaml`
@@ -74,4 +74,20 @@ spec:
     matchLabels:
       run: node-hello
   replicas: 2
+  template:
+    metadata:
+      labels:
+        run: node-hello
+    spec:
+      containers:
+      - name: node-hello
+        image: ghcr.io/bhubr/node-hello-world:0.0.1
+        ports:
+        - containerPort: 3000
 ```
+
+Apply it: `kubectl apply -f k8s-one-pod-depl.yaml`.
+
+There was *one* pod named `node-hello` before running it, and now? An error because we removed the template.
+
+Btw there was an error in my files! Didn't change port from 80 to 3000.

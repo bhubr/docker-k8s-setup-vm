@@ -1,6 +1,9 @@
 # Setup VM Debian 11 pour Docker et Kubernetes
 
-**ATTENTION** mettre 2 cores sinon minikube en PLS
+## Parametrage VM pre-install
+
+* **ATTENTION** mettre 2 cores sinon minikube en PLS (peut etre fait apres coup)
+* Ajouter redirection de port sur interface NAT
 
 ## Procedure post-install
 

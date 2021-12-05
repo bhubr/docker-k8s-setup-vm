@@ -183,3 +183,30 @@ spec:
                   number: 3000
 ```
 
+Then apply it in VM: `kubectl apply -f k8s-one-pod-ingress.yaml`
+
+```
+ingress.networking.k8s.io/node-hello-ingress created
+```
+
+Then get it: `kubectl get ingress`
+
+```
+NAME                 CLASS    HOSTS              ADDRESS   PORTS   AGE
+node-hello-ingress   <none>   hello-world.info             80      31s
+```
+
+After waiting a bit:
+
+```
+NAME                 CLASS    HOSTS              ADDRESS        PORTS   AGE
+node-hello-ingress   <none>   hello-world.info   192.168.49.2   80      2m
+```
+
+Add this to `/etc/hosts`:
+
+```
+192.168.49.2    hello-world.info
+```
+
+Then `curl hello-world.info` sends back `Hello World`. Yay!

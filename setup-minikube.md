@@ -1,5 +1,7 @@
 # Setup Minikube
 
+**ATTENTION** mettre 2 cores sur la VM sinon minikube en PLS
+
 * [Doc install minikube](https://minikube.sigs.k8s.io/docs/start/)
 * Check la version du package debian : 1.24.0-0
 * [Doc install kubectl](https://kubernetes.io/fr/docs/tasks/tools/install-kubectl/)
@@ -25,3 +27,24 @@ Dilemmes :
 
 * Il y a des .deb et des .rpm en plus du binaire
 * UTILISER wget pour dl les binaires ! curl patauge avec les liens GitHub
+
+## Droits
+
+* Ajouter utilisateur regulier aux sudoers -> deja fait en post install VM
+* Ajouter utilisateur regulier au groupe `docker` : `sudo usermod -aG docker benoit`
+* newgrp - se connecter avec un nouveau groupe : `newgrp docker`
+
+## Pendant `minikube start` 
+
+`minikube start` download son propre kubectl ? non en fait... installe `preloaded-images-k8s-v11-v...` et `gcr.io/k8s-minikube/kicbase...`.
+
+Ca prend du temps sur "Downloading Kubernetes v1.21.2 preload ...".
+
+Puis reste sur "Creating docker container (CPUs=2, Memory=2200MB) d'ou l'importance de mettre assez de RAM !mini"
+
+Ca fonctionne. Au final le minikube downloade depuis GitHub et le minikube kubectl donnent la meme version, jusqu'au SHA de commit Git.
+
+kubectl is now configured to use "minikube" cluster and "default" namespace by default
+
+`top` indique 2829.3 avail Mem, 134.1 free
+vs VM source  3691.2 avail Mem, 3597.8 free

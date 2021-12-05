@@ -1,5 +1,7 @@
 # Setup VM Debian 11 pour Docker et Kubernetes
 
+**ATTENTION** mettre 2 cores sinon minikube en PLS
+
 ## Procedure post-install
 
 ### MAJ
@@ -14,6 +16,12 @@ apt-get update
 
 ```
 apt-get install -y sudo vim git
+```
+
+### Octroi des droits sudo
+
+```
+usermod -aG sudo benoit
 ```
 
 ### Installation de Docker

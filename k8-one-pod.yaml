@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: node-hello
+spec:
+  containers:
+  - name: node-hello
+    image: ghcr.io/bhubr/node-hello-world:0.0.1
+    ports:
+    - containerPort: 80

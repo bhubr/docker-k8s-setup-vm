@@ -1,0 +1,9 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-hello
+spec:
+  selector:
+    matchLabels:
+      run: node-hello
+  replicas: 2

@@ -153,7 +153,33 @@ node-hello   NodePort   10.103.255.162   <none>        3333:32147/TCP   3h49m
 4. Visit the Service via NodePort: `minikube service node-hello --url`
 
 ```
-http://192.168.49.2:32147
+http://192.168.49.2:32088
 ```
 
 **DIDN'T WORK B/C node-hello bound to 127.0.0.1 instead of 0.0.0.0!!**
+
+Works after fixing the image!
+
+Now the ingress config (`k8s-one-pod-ingress.yaml`):
+
+```
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: node-hello-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+spec:
+  rules:
+    - host: hello-world.info
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: node-hello
+                port:
+                  number: 3000
+```
+
